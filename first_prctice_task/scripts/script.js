@@ -19,11 +19,35 @@
         'logan': '8.1'
     }
 
-Проверить, чтобы все работало без ошибок в консоли */
+Проверить, чтобы все работало без ошибок в консоли 
+
+2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+
+ Задание на урок:
+
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+'use strict';
+
+// Код возьмите из предыдущего домашнего задания
 
 'use strict'
 
-const numberOfFilms = +prompt('how many films do you watch?', '');
+const numberOfFilms = +prompt('how many films do you watch?', ''),
+      oneOfTheLastFilms1 = prompt("one of the last watched films?"),
+      rateOfFilm1 = prompt("how do you rate them?"),
+      oneOfTheLastFilms2 = prompt("one of the last watched films?"),
+      rateOfFilm2 = prompt("how do you rate them?");
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -32,13 +56,6 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
-
-const oneOfTheLastFilms1 = prompt("one of the last watched films?"),
-      rateOfFilm1 = prompt("how do you rate them?"),
-      oneOfTheLastFilms2 = prompt("one of the last watched films?"),
-      rateOfFilm2 = prompt("how do you rate them?");
-
-
 
 personalMovieDB["movies"][oneOfTheLastFilms1] = rateOfFilm1;
 personalMovieDB["movies"][oneOfTheLastFilms2] = rateOfFilm2;
