@@ -41,13 +41,10 @@
 
 // Код возьмите из предыдущего домашнего задания
 
-'use strict'
 
-const numberOfFilms = +prompt('how many films do you watch?', ''),
-      oneOfTheLastFilms1 = prompt("one of the last watched films?"),
-      rateOfFilm1 = prompt("how do you rate them?"),
-      oneOfTheLastFilms2 = prompt("one of the last watched films?"),
-      rateOfFilm2 = prompt("how do you rate them?");
+const numberOfFilms = +prompt('how many films do you watch?', '');
+
+
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -57,7 +54,24 @@ const personalMovieDB = {
     privat: false
 };
 
-personalMovieDB["movies"][oneOfTheLastFilms1] = rateOfFilm1;
-personalMovieDB["movies"][oneOfTheLastFilms2] = rateOfFilm2;
+for (let i = 0; i < 2; i ++){
+    const a = prompt(`${i+1} one of the last watched films?`, ''),
+          b = prompt(`${i+1} how do you rate them?`, '');
+    if ( a != null && b != null && a != '' && b != '' && a.length < 50){
+        personalMovieDB.movies[a] = b;
+    } else {
+        i--
+    }
+};
+
+if (personalMovieDB.count < 10){
+    alert("Просмотрено довольно мало фильмов");
+} else if ( personalMovieDB.count < 30){
+    alert("Вы классический зритель");
+} else if (personalMovieDB.count > 30 ){
+    alert("Вы киноман");
+} else{
+    alert("ERORRRRRRRRRR")
+}
 
 console.log(personalMovieDB);
